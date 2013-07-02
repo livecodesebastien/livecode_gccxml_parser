@@ -52,7 +52,7 @@ struct MCPrintingPrinterPageRange;
 
 void MCPrintingPrinterPageRangeFree(MCExecContext& ctxt, MCPrintingPrinterPageRange& value);
 void MCPrintingPrinterPageRangeCopy(MCExecContext& ctxt, MCPrintingPrinterPageRange& src_value, MCPrintingPrinterPageRange& dst_value);
-void MCPrintingPrinterPageRangeEncode(MCExecContext& ctxt, MCPrintingPrinterPageRangeRep& rep, MCPrintingPrinterPageRange& value, MCExecErrorInfo*& r_error);
+//void MCPrintingPrinterPageRangeEncode(MCExecContext& ctxt, MCPrintingPrinterPageRangeRep& rep, MCPrintingPrinterPageRange& value, MCExecErrorInfo*& r_error);
 void MCPrintingPrinterPageRangeDecode(MCExecContext& ctxt, MCPrintingPrinterPageRange& value, MCPrintingPrinterPageRangeRep& rep);
 
 //////////
@@ -78,7 +78,7 @@ struct MCPrintingPrinterDeviceOutput;
 
 void MCPrintingPrinterDeviceOutputFree(MCExecContext& ctxt, MCPrintingPrinterDeviceOutput& value);
 void MCPrintingPrinterPageRangeCopy(MCExecContext& ctxt, const MCPrintingPrinterDeviceOutput& src_value, MCPrintingPrinterDeviceOutput& dst_value);
-void MCPrintingPrinterPageRangeEncode(MCExecContext& ctxt, MCPrintingPrinterDeviceOutputRep& rep, MCPrintingPrinterDeviceOutput& value, MCExecErrorInfo*& r_error);
+//void MCPrintingPrinterPageRangeEncode(MCExecContext& ctxt, MCPrintingPrinterDeviceOutputRep& rep, MCPrintingPrinterDeviceOutput& value, MCExecErrorInfo*& r_error);
 void MCPrintingPrinterPageRangeDecode(MCExecContext& ctxt, const MCPrintingPrinterDeviceOutput& value, MCPrintingPrinterDeviceOutputRep& rep);
 
 //////////
@@ -136,8 +136,8 @@ void MCPrintingGetPrintJobName(MCExecContext& ctxt, MCStringRef &r_value);
 void MCPrintingSetPrintJobName(MCExecContext& ctxt, MCStringRef p_value);
 void MCPrintingGetPrintJobCopies(MCExecContext& ctxt, integer_t &r_value);
 void MCPrintingSetPrintJobCopies(MCExecContext& ctxt, integer_t p_value);
-void MCPrintingGetPrintJobDuplex(MCExecContext& ctxt, MCPrintingPrintJobDuplex& r_value);
-void MCPrintingSetPrintJobDuplex(MCExecContext& ctxt, MCPrintingPrintJobDuplex p_value);
+void MCPrintingGetPrintJobDuplex(MCExecContext& ctxt, MCPrintingPrinterJobDuplex& r_value);
+void MCPrintingSetPrintJobDuplex(MCExecContext& ctxt, MCPrintingPrinterJobDuplex p_value);
 void MCPrintingGetPrintJobCollate(MCExecContext& ctxt, bool &r_value);
 void MCPrintingSetPrintJobCollate(MCExecContext& ctxt, bool p_value);
 void MCPrintingGetPrintJobColor(MCExecContext& ctxt, bool &r_value);
