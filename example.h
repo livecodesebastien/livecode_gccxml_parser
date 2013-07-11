@@ -8,10 +8,10 @@
 typedef intset_t MCPrintingPrinterFeatures;
 enum /* MCPrintingPrinterFeatures */
 {
-	kMCPrintingPrinterFeatureCollate,
-	kMCPrintingPrinterFeatureCopies,
-	kMCPrintingPrinterFeatureColor,
-	kMCPrintingPrinterFeatureDuplex,
+	kMCPrintingPrinterFeaturesCollate,
+	kMCPrintingPrinterFeaturesCopies,
+	kMCPrintingPrinterFeaturesColor,
+	kMCPrintingPrinterFeaturesDuplex,
 };
 
 enum MCPrintingPrinterPageOrientation
