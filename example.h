@@ -5,6 +5,8 @@
 #include "sysdefs.h"
 #endif
 
+struct MCExecErrorInfo;
+
 typedef intset_t MCPrintingPrinterFeatures;
 enum /* MCPrintingPrinterFeatures */
 {
@@ -52,8 +54,8 @@ struct MCPrintingPrinterPageRange;
 
 void MCPrintingPrinterPageRangeFree(MCExecContext& ctxt, MCPrintingPrinterPageRange& value);
 void MCPrintingPrinterPageRangeCopy(MCExecContext& ctxt, MCPrintingPrinterPageRange& src_value, MCPrintingPrinterPageRange& dst_value);
-//void MCPrintingPrinterPageRangeEncode(MCExecContext& ctxt, MCPrintingPrinterPageRangeRep& rep, MCPrintingPrinterPageRange& value, MCExecErrorInfo*& r_error);
-void MCPrintingPrinterPageRangeDecode(MCExecContext& ctxt, MCPrintingPrinterPageRange& value, MCPrintingPrinterPageRangeRep& rep);
+void MCPrintingPrinterPageRangeEncode(MCExecContext& ctxt, MCPrintingPrinterPageRangeRep rep, MCPrintingPrinterPageRange& value, MCExecErrorInfo*& r_error);
+void MCPrintingPrinterPageRangeDecode(MCExecContext& ctxt, MCPrintingPrinterPageRange value, MCPrintingPrinterPageRangeRep& rep);
 
 //////////
 
@@ -78,8 +80,8 @@ struct MCPrintingPrinterDeviceOutput;
 
 void MCPrintingPrinterDeviceOutputFree(MCExecContext& ctxt, MCPrintingPrinterDeviceOutput& value);
 void MCPrintingPrinterDeviceOutputCopy(MCExecContext& ctxt, const MCPrintingPrinterDeviceOutput& src_value, MCPrintingPrinterDeviceOutput& dst_value);
-//void MCPrintingPrinterDeviceOutputEncode(MCExecContext& ctxt, MCPrintingPrinterDeviceOutputRep& rep, MCPrintingPrinterDeviceOutput& value, MCExecErrorInfo*& r_error);
-void MCPrintingPrinterDeviceOutputDecode(MCExecContext& ctxt, const MCPrintingPrinterDeviceOutput& value, MCPrintingPrinterDeviceOutputRep& rep);
+void MCPrintingPrinterDeviceOutputEncode(MCExecContext& ctxt, MCPrintingPrinterDeviceOutputRep rep, MCPrintingPrinterDeviceOutput& value, MCExecErrorInfo*& r_error);
+void MCPrintingPrinterDeviceOutputDecode(MCExecContext& ctxt, const MCPrintingPrinterDeviceOutput value, MCPrintingPrinterDeviceOutputRep& rep);
 
 //////////
 

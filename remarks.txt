@@ -32,7 +32,17 @@ Shall I just check whether one of the enum element has the value targeted?
 Opaque type:
 Have you got any example on the simple and derived representation of an opaque?
 
-Correction in the example given:
+For the encode and decode functions: the second parameter, according to the doc, must be:
+    - void MC<module><name>Encode(MCExecContext& ctxt, MC<module><name>Rep rep, MC<module><name>& r_value, MCExecErrorInfo*& r_error);
+but I rather found, in the example:
+    - void MCPrintingPrinterDeviceOutputEncode(MCExecContext& ctxt, MCPrintingPrinterDeviceOutputRep rep, MCPrintingPrinterDeviceOutput& value, MCExecErrorInfo*& r_error);
+
+Which of those is the correct one?
+
+*********
+
+Corrections in the example given:
     - PrinterOrientation should be PrinterPageOrientation (or the opposite)
     - enum MCPrintingPrinterLinkType is missing in C++ header file
     - boolean MCPrintingPrinterBookmarkInitialStateType missing in C++ header file
+    - there is no struct such as MCExecErrorInfo
