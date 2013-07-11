@@ -19,6 +19,8 @@ In the 2nd case, the native name is MC<module><property>
 How to check whether two named types match then?
 -> for now, I consider two types match in both of the cases.
 
+Issue actually extends to all the definitions which don't include the module name - so also the opaque definitions in the Interface modules 
+
 ********
 
 In the enum definition, how should the name of a constant element be defined? The spec is not really clear about that, it only reads "my_other_enum_tag = 20" for a constant element's name.
@@ -26,6 +28,9 @@ Shall I just check whether one of the enum element has the value targeted?
 -> that's what I do for now
 
 ********
+
+Opaque type:
+Have you got any example on the simple and derived representation of an opaque?
 
 Correction in the example given:
     - PrinterOrientation should be PrinterPageOrientation (or the opposite)

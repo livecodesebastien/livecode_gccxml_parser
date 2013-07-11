@@ -77,9 +77,9 @@ struct MCPrintingPrinterDeviceOutputRep
 struct MCPrintingPrinterDeviceOutput;
 
 void MCPrintingPrinterDeviceOutputFree(MCExecContext& ctxt, MCPrintingPrinterDeviceOutput& value);
-void MCPrintingPrinterPageRangeCopy(MCExecContext& ctxt, const MCPrintingPrinterDeviceOutput& src_value, MCPrintingPrinterDeviceOutput& dst_value);
-//void MCPrintingPrinterPageRangeEncode(MCExecContext& ctxt, MCPrintingPrinterDeviceOutputRep& rep, MCPrintingPrinterDeviceOutput& value, MCExecErrorInfo*& r_error);
-void MCPrintingPrinterPageRangeDecode(MCExecContext& ctxt, const MCPrintingPrinterDeviceOutput& value, MCPrintingPrinterDeviceOutputRep& rep);
+void MCPrintingPrinterDeviceOutputCopy(MCExecContext& ctxt, const MCPrintingPrinterDeviceOutput& src_value, MCPrintingPrinterDeviceOutput& dst_value);
+//void MCPrintingPrinterDeviceOutputEncode(MCExecContext& ctxt, MCPrintingPrinterDeviceOutputRep& rep, MCPrintingPrinterDeviceOutput& value, MCExecErrorInfo*& r_error);
+void MCPrintingPrinterDeviceOutputDecode(MCExecContext& ctxt, const MCPrintingPrinterDeviceOutput& value, MCPrintingPrinterDeviceOutputRep& rep);
 
 //////////
 
