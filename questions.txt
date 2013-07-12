@@ -9,3 +9,11 @@ About the optional parameters:
         name => MCArrayRef
 
 In the example, the 2nd solution appears
+
+************************
+
+The functions PrintLink and MCPrintingExecPrintLink are completely different:
+
+    command PrintLink(in type is PrinterLinkType, in area is Rectangle)
+
+    void MCPrintingExecPrintLink(MCExecContext& ctxt, int type, MCStringRef target, MCRectangle area);

@@ -55,7 +55,7 @@ struct MCPrintingPrinterPageRange;
 void MCPrintingPrinterPageRangeFree(MCExecContext& ctxt, MCPrintingPrinterPageRange& value);
 void MCPrintingPrinterPageRangeCopy(MCExecContext& ctxt, MCPrintingPrinterPageRange& src_value, MCPrintingPrinterPageRange& dst_value);
 void MCPrintingPrinterPageRangeEncode(MCExecContext& ctxt, MCPrintingPrinterPageRangeRep rep, MCPrintingPrinterPageRange& value, MCExecErrorInfo*& r_error);
-void MCPrintingPrinterPageRangeDecode(MCExecContext& ctxt, MCPrintingPrinterPageRange value, MCPrintingPrinterPageRangeRep& rep);
+void MCPrintingPrinterPageRangeDecode(MCExecContext& ctxt, MCPrintingPrinterPageRange value, MCPrintingPrinterPageRangeRep& rep, MCExecErrorInfo*& r_error);
 
 //////////
 
@@ -81,7 +81,7 @@ struct MCPrintingPrinterDeviceOutput;
 void MCPrintingPrinterDeviceOutputFree(MCExecContext& ctxt, MCPrintingPrinterDeviceOutput& value);
 void MCPrintingPrinterDeviceOutputCopy(MCExecContext& ctxt, const MCPrintingPrinterDeviceOutput& src_value, MCPrintingPrinterDeviceOutput& dst_value);
 void MCPrintingPrinterDeviceOutputEncode(MCExecContext& ctxt, MCPrintingPrinterDeviceOutputRep rep, MCPrintingPrinterDeviceOutput& value, MCExecErrorInfo*& r_error);
-void MCPrintingPrinterDeviceOutputDecode(MCExecContext& ctxt, const MCPrintingPrinterDeviceOutput value, MCPrintingPrinterDeviceOutputRep& rep);
+void MCPrintingPrinterDeviceOutputDecode(MCExecContext& ctxt, const MCPrintingPrinterDeviceOutput value, MCPrintingPrinterDeviceOutputRep& rep, MCExecErrorInfo*& r_error);
 
 //////////
 
@@ -106,7 +106,7 @@ void MCPrintingExecPrintRectOfCardIntoRect(MCExecContext& ctxt, MCCard *card, MC
 
 void MCPrintingExecClosePrinting(MCExecContext& ctxt);
 
-void MCPrintingExecOpenPrintingToDestination(MCExecContext& ctxt, MCStringRef p_destination, MCStringRef p_filename, MCArrayRef p_options);
+void MCPrintingExecOpenPrintingToDestination(MCExecContext& ctxt, MCStringRef p_destination, MCStringRef p_filename, MCArrayRef* p_options);
 void MCPrintingExecOpenPrinting(MCExecContext& ctxt);
 void MCPrintingExecOpenPrintingWithDialog(MCExecContext& ctxt, bool p_as_sheet);
 
