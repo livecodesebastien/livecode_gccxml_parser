@@ -1,0 +1,11 @@
+About the optional parameters:
+    When the optional parameter is an array, is there something like
+1)      kind => pointer type
+        type => 
+            kind => named type
+            name => MCArrayRef
+
+2)      kind => named type
+        name => MCArrayRef
+
+In the example, the 2nd solution appears

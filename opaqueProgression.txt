@@ -1,8 +1,8 @@
-[OK]  All non-union opaques with name <name> map to a native type named MC<module><name>. 
+[OK] All non-union opaques with name <name> map to a native type named MC<module><name>. 
 
-[OK]  The native type must resolve to either a struct or a pointer to a struct. 
+[OK] The native type must resolve to either a struct or a pointer to a struct. 
 
-In the case of resolving to a struct, the struct must be defined so that the size of the type can be calculated.
+[X] In the case of resolving to a struct, the struct must be defined so that the size of the type can be calculated.
 
 [OK] All non-union opaques can define methods that are used to manipulate the types.
 
@@ -15,10 +15,10 @@ In the case of resolving to a struct, the struct must be defined so that the siz
 [OK] If the opaque needs special action to copy, then there must be a method of the form:
 [OK] void MC<module><name>Copy(MCExecContext& ctxt, MC<module><name> value, MC<module><name>& r_new_value);
 
-[X] If the opaque is a non-variant mapped type with type <type>, then there must be methods to encode and decode:
-[X] void MC<module><name>Encode(MCExecContext& ctxt, <native type> rep, MC<module><name>& r_value, MCExecErrorInfo*& r_error);
-[X] void MC<module><name>Decode(MCExecContext& ctxt, MC<module><name> value, <native type>& r_rep, MCExecErrorInfo*& r_error);
-[X] Here <type> must be mappable to <native type>.
+[OK] If the opaque is a non-variant mapped type with type <type>, then there must be methods to encode and decode:
+[OK] void MC<module><name>Encode(MCExecContext& ctxt, <native type> rep, MC<module><name>& r_value, MCExecErrorInfo*& r_error);
+[OK] void MC<module><name>Decode(MCExecContext& ctxt, MC<module><name> value, <native type>& r_rep, MCExecErrorInfo*& r_error);
+[OK] Here <type> must be mappable to <native type>.
 
 [OK] If the opaque is a variant mapped type then the definition must be mappable as if it were just a variant to a native type namde MC<module><name>Rep, and there must be en/decode methods:
 [OK] void MC<module><name>Encode(MCExecContext& ctxt, MC<module><name>Rep rep, MC<module><name>& r_value, MCExecErrorInfo*& r_error);
