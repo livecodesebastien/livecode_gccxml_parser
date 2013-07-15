@@ -5,7 +5,7 @@
 #include "sysdefs.h"
 #endif
 
-struct MCExecErrorInfo;
+typedef struct MCExecErrorInfo;
 
 typedef intset_t MCPrintingPrinterFeatures;
 enum /* MCPrintingPrinterFeatures */
