@@ -31,6 +31,13 @@ enum MCPrintingPrinterJobDuplex
 	kMCPrintingPrinterJobDuplexLongEdge,
 };
 
+enum MCPrintingPrinterLinkType
+{
+    kMCPrinterLinkUnspecified,
+    kMCPrinterLinkAnchor,
+    kMCPrinterLinkURI,
+};
+
 //////////
 
 enum MCPrintingPrinterPageRangeRepType
@@ -52,8 +59,8 @@ struct MCPrintingPrinterPageRangeRep
 
 struct MCPrintingPrinterPageRange;
 
-void MCPrintingPrinterPageRangeFree(MCExecContext& ctxt, MCPrintingPrinterPageRange& value);
-void MCPrintingPrinterPageRangeCopy(MCExecContext& ctxt, MCPrintingPrinterPageRange& src_value, MCPrintingPrinterPageRange& dst_value);
+void MCPrintingPrinterPageRangeFinalize(MCExecContext& ctxt, MCPrintingPrinterPageRange& value);
+bool MCPrintingPrinterPageRangeCopy(MCExecContext& ctxt, const MCPrintingPrinterPageRange& src_value, MCPrintingPrinterPageRange& dst_value);
 void MCPrintingPrinterPageRangeEncode(MCExecContext& ctxt, MCPrintingPrinterPageRangeRep rep, MCPrintingPrinterPageRange& value, MCExecErrorInfo*& r_error);
 void MCPrintingPrinterPageRangeDecode(MCExecContext& ctxt, MCPrintingPrinterPageRange value, MCPrintingPrinterPageRangeRep& rep, MCExecErrorInfo*& r_error);
 
@@ -78,8 +85,8 @@ struct MCPrintingPrinterDeviceOutputRep
 
 struct MCPrintingPrinterDeviceOutput;
 
-void MCPrintingPrinterDeviceOutputFree(MCExecContext& ctxt, MCPrintingPrinterDeviceOutput& value);
-void MCPrintingPrinterDeviceOutputCopy(MCExecContext& ctxt, const MCPrintingPrinterDeviceOutput& src_value, MCPrintingPrinterDeviceOutput& dst_value);
+void MCPrintingPrinterDeviceOutputFinalize(MCExecContext& ctxt, MCPrintingPrinterDeviceOutput& value);
+bool MCPrintingPrinterDeviceOutputCopy(MCExecContext& ctxt, const MCPrintingPrinterDeviceOutput& src_value, MCPrintingPrinterDeviceOutput& dst_value);
 void MCPrintingPrinterDeviceOutputEncode(MCExecContext& ctxt, MCPrintingPrinterDeviceOutputRep rep, MCPrintingPrinterDeviceOutput& value, MCExecErrorInfo*& r_error);
 void MCPrintingPrinterDeviceOutputDecode(MCExecContext& ctxt, const MCPrintingPrinterDeviceOutput value, MCPrintingPrinterDeviceOutputRep& rep, MCExecErrorInfo*& r_error);
 
@@ -91,7 +98,7 @@ void MCPrintingExecAnswerPrinter(MCExecContext &ctxt, bool p_is_sheet);
 void MCPrintingExecCancelPrinting(MCExecContext& ctxt);
 void MCPrintingExecResetPrinting(MCExecContext& ctxt);
 void MCPrintingExecPrintAnchor(MCExecContext& ctxt, MCStringRef name, MCPoint location);
-void MCPrintingExecPrintLink(MCExecContext& ctxt, int type, MCStringRef target, MCRectangle area);
+void MCPrintingExecPrintLink(MCExecContext& ctxt, MCPrintingPrinterLinkType type, MCRectangle area);
 void MCPrintingExecPrintNativeBookmark(MCExecContext& ctxt, MCStringRef title, MCPoint location, integer_t level, bool initially_closed);
 void MCPrintingExecPrintUnicodeBookmark(MCExecContext& ctxt, MCStringRef title, MCPoint location, integer_t level, bool initially_closed);
 void MCPrintingExecPrintBreak(MCExecContext& ctxt);
