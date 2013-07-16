@@ -12,13 +12,4 @@ In the example, the 2nd solution is used
 
 ************************
 
-The functions PrintLink and MCPrintingExecPrintLink are completely different:
-
-    command PrintLink(in type is PrinterLinkType, in area is Rectangle)
-
-    void MCPrintingExecPrintLink(MCExecContext& ctxt, int type, MCStringRef target, MCRectangle area);
-
-************************
-
-
-No <int> nor <unsigned int> types in the numeric values?
+Should the type mapping tool take in consideration all the native-to-script-level conversions?
