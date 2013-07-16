@@ -13,3 +13,5 @@ In the example, the 2nd solution is used
 ************************
 
 Should the type mapping tool take in consideration all the native-to-script-level conversions?
+
+For the get property method, is the signature MC<name>Get<property>(ExecContext& ctxt, 
