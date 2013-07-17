@@ -5,7 +5,7 @@
 #include "sysdefs.h"
 #endif
 
-struct MCExecErrorInfo;
+struct MCErrorRef;
 struct MCDataRef;
 
 typedef intset_t MCPrintingPrinterFeatures;
@@ -34,9 +34,9 @@ enum MCPrintingPrinterJobDuplex
 
 enum MCPrintingPrinterLinkType
 {
-    kMCPrintingPrinterLinkUnspecified,
-    kMCPrintingPrinterLinkAnchor,
-    kMCPrintingPrinterLinkURI,
+    kMCPrinterLinkUnspecified,
+    kMCPrinterLinkAnchor,
+    kMCPrinterLinkURI,
 };
 
 //////////
@@ -61,10 +61,10 @@ struct MCPrintingPrinterPageRangeRep
 struct MCPrintingPrinterPageRange;
 
 void MCPrintingPrinterPageRangeMeasure(size_t& r_size_in_bytes);
-void MCPrintingPrinterPageRangeFinalize(MCExecContext& ctxt, MCPrintingPrinterPageRange& value);
-bool MCPrintingPrinterPageRangeCopy(MCExecContext& ctxt, const MCPrintingPrinterPageRange& src_value, MCPrintingPrinterPageRange& dst_value);
-void MCPrintingPrinterPageRangeEncode(MCExecContext& ctxt, MCPrintingPrinterPageRangeRep rep, MCPrintingPrinterPageRange& value, MCExecErrorInfo*& r_error);
-void MCPrintingPrinterPageRangeDecode(MCExecContext& ctxt, MCPrintingPrinterPageRange value, MCPrintingPrinterPageRangeRep& rep, MCExecErrorInfo*& r_error);
+void MCPrintingPrinterPageRangeFinalize(MCPrintingPrinterPageRange& value);
+bool MCPrintingPrinterPageRangeCopy(const MCPrintingPrinterPageRange& src_value, MCPrintingPrinterPageRange& dst_value);
+void MCPrintingPrinterPageRangeEncode(MCExecContext& ctxt, MCPrintingPrinterPageRangeRep rep, MCPrintingPrinterPageRange& value, MCErrorRef*& r_error);
+void MCPrintingPrinterPageRangeDecode(MCExecContext& ctxt, MCPrintingPrinterPageRange value, MCPrintingPrinterPageRangeRep& rep, MCErrorRef*& r_error);
 
 //////////
 
@@ -88,10 +88,10 @@ struct MCPrintingPrinterDeviceOutputRep
 struct MCPrintingPrinterDeviceOutput;
 
 void MCPrintingPrinterDeviceOutputMeasure(size_t& r_size_in_bytes);
-void MCPrintingPrinterDeviceOutputFinalize(MCExecContext& ctxt, MCPrintingPrinterDeviceOutput& value);
-bool MCPrintingPrinterDeviceOutputCopy(MCExecContext& ctxt, const MCPrintingPrinterDeviceOutput& src_value, MCPrintingPrinterDeviceOutput& dst_value);
-void MCPrintingPrinterDeviceOutputEncode(MCExecContext& ctxt, MCPrintingPrinterDeviceOutputRep rep, MCPrintingPrinterDeviceOutput& value, MCExecErrorInfo*& r_error);
-void MCPrintingPrinterDeviceOutputDecode(MCExecContext& ctxt, const MCPrintingPrinterDeviceOutput value, MCPrintingPrinterDeviceOutputRep& rep, MCExecErrorInfo*& r_error);
+void MCPrintingPrinterDeviceOutputFinalize(MCPrintingPrinterDeviceOutput& value);
+bool MCPrintingPrinterDeviceOutputCopy(const MCPrintingPrinterDeviceOutput& src_value, MCPrintingPrinterDeviceOutput& dst_value);
+void MCPrintingPrinterDeviceOutputEncode(MCExecContext& ctxt, MCPrintingPrinterDeviceOutputRep rep, MCPrintingPrinterDeviceOutput& value, MCErrorRef*& r_error);
+void MCPrintingPrinterDeviceOutputDecode(MCExecContext& ctxt, const MCPrintingPrinterDeviceOutput value, MCPrintingPrinterDeviceOutputRep& rep, MCErrorRef*& r_error);
 
 //////////
 

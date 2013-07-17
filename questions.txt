@@ -1,17 +1,1 @@
-About the optional parameters:
-    When the optional parameter is an array, how should it be?
-1)      kind => pointer type
-        type => 
-            kind => named type
-            name => MCArrayRef
-
-2)      kind => named type
-        name => MCArrayRef
-
-In the example, the 2nd solution is used
-
-************************
-
 Should the type mapping tool take in consideration all the native-to-script-level conversions?
-
-For the get property method, is the signature MC<name>Get<property>(ExecContext& ctxt, 
