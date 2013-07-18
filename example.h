@@ -34,9 +34,9 @@ enum MCPrintingPrinterJobDuplex
 
 enum MCPrintingPrinterLinkType
 {
-    kMCPrinterLinkUnspecified,
-    kMCPrinterLinkAnchor,
-    kMCPrinterLinkURI,
+    kMCPrintingPrinterLinkTypeUnspecified,
+    kMCPrintingPrinterLinkTypeAnchor,
+    kMCPrintingPrinterLinkTypeURL,
 };
 
 //////////
